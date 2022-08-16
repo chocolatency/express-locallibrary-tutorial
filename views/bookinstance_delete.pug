@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+	h1= `${title} - "${bookInstance.imprint}"` 
+
+	form(method="post" action="")
+		input(type="hidden" name="id" value=bookInstance._id)
+		button.btn.btn-primary Delete

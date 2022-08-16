@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+	h1= `${title} "${genre.name}"` 
+
+	- console.log(genre, books);
+
+	if books.length > 0
+		h4 To delete genre first you have to delete related books:
+
+		ul 
+		each book in books 
+			li 
+				a(href=book.url) #{book.title}
+	else 
+		form(method="post" action="")
+			input(type="hidden" name="id")
+			button.btn.btn-primary= 'Delete'
