@@ -23,8 +23,7 @@ app.use(compression());
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb+srv://freecodecamp:freecodecamp@cluster0.jo0ml.mongodb.net/?retryWrites=true&w=majority';
 // Set up mongoose connection
-const dev_db_url = 'mongodb+srv://freecodecamp:freecodecamp@cluster0.jo0ml.mongodb.net/?retryWrites=true&w=majority'
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
